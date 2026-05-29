@@ -1,284 +1,284 @@
-# DeepSeek V4 用户反馈意见汇总报告 @20260520
+# DeepSeek V4 User Feedback Summary Report @20260520
 
-<callout emoji="📊" background-color="light-blue">数据来源：小红书帖子 6a0ac4ce000000003601e8f6 评论区（500+ 条含楼中楼）｜用户群体：API/酒馆角色扮演、情感陪伴、小说创作用户｜截至 2026年5月</callout>
+<callout emoji="📊" background-color="light-blue">Data source: Xiaohongshu post 6a0ac4ce000000003601e8f6 comment section (500+ comments including nested replies) | User base: API/SillyTavern roleplay, emotional companionship, and fiction-writing users | As of: May 2026</callout>
 
 ---
 
-## 一、八股句式与刻板表达（频次：极高，几乎全员吐槽）
+## 1. Boilerplate Phrasing and Formulaic Expression (Frequency: Extremely High, criticized by nearly everyone)
 
-这是**所有反馈中提及频率最高的问题**，几乎每位用户都有提到。
+This is **the single most frequently mentioned issue across all feedback** — nearly every user brought it up.
 
-### 核心问题
+### Core Problem
 
-模型存在大量重复使用的固定句式，形成强烈的"AI味"，严重影响内容质量和沉浸感。
+The model relies heavily on a set of repeated, fixed sentence patterns, producing a strong "AI flavor" that seriously degrades content quality and immersion.
 
-### 高频八股句式列表
+### List of High-Frequency Boilerplate Patterns
 
-| 句式 | 示例 | 提及频次 |
+| Pattern | Example | Mention Frequency |
 |------|------|---------|
-| "不是……而是……" / "不是……是……" | "她笑了。不是温暖的笑。而是幸福的、充满爱的笑。" | 30+ 人 |
-| "这就够了" / "那就够了" | 角色收尾时机械性使用 | 15+ 人 |
-| "语气平淡，像在说今天的天气" | 几乎所有角色都用此模板形容语气 | 10+ 人 |
-| 小短句排比 | "我知道。你喜欢。我也喜欢。" | 10+ 人 |
-| 破折号泛滥 | 大量破折号注释式写法 | 8+ 人 |
-| "稳稳接住" / "兜住" / "接住" | 情感对话中高频出现 | 5+ 人 |
-| 否定后肯定句式 | "不x，不y，不z，就……" | 多人 |
-| "眨了眨眼" / "喉结滚动" | 动作描写固化 | 多人 |
+| The "not X, but Y" sentence pattern ("not X, it's Y") | "She smiled. Not a warm smile. But a happy smile, full of love." | 30+ people |
+| "That was enough" / "That was all it took" | Used mechanically when wrapping up a character's lines | 15+ people |
+| "Her tone was flat, as if talking about today's weather" | Almost every character's tone is described with this template | 10+ people |
+| Short-sentence parallelism | "I know. You like it. I like it too." | 10+ people |
+| Em-dash overuse | Heavy use of em-dash, annotation-style writing | 8+ people |
+| "Caught it steadily" / "held it" / "caught it" | Appears frequently in emotional dialogue | 5+ people |
+| Negation-then-affirmation pattern | "Not x, not y, not z, just..." | Many people |
+| "Blinked" / "his throat bobbed" | Ossified action description | Many people |
 
-### 用户原文举例
+### Examples in Users' Own Words
 
-- **@杨任.YRWAN**（45赞）：*"她笑了。不是温暖的笑。而是幸福的、充满爱的笑"* / *"她爱他。她也爱他"* / *"她的嘴角弯了"*
-- **@小红薯6430FFD2**（6赞）：*"语言描写的语料太烂了，完全是GPT怪味，混着不是...是...的奇怪短句加判断句"*
-- **@Ani**（4赞）：*"不是而是太多了，刚出的时候还可以，现在变笨了之后根本杀不完"*
-- **@Ani**：*"完全不看禁词表，把禁词表当提词器，疯狂八股"*
+- **@Yangren.YRWAN** (45 likes): *"She smiled. Not a warm smile. But a happy smile, full of love"* / *"She loves him. And she loves him too"* / *"The corners of her mouth curved up"*
+- **@Xiaohongshu6430FFD2** (6 likes): *"The corpus for the prose description is terrible — total GPT funk, mixed with those weird short sentences and judgment clauses from the 'not X, it's Y' pattern"*
+- **@Ani** (4 likes): *"There's way too much 'not X, but Y.' It was okay when it first launched, but now that it's gotten dumber you just can't kill them all"*
+- **@Ani**: *"It completely ignores the banned-words list and treats it like a teleprompter instead — churning out boilerplate like crazy"*
 
-<callout emoji="⚠️" background-color="light-yellow">严重性：多位用户反馈将这些句式写入禁词表/负面提示词后反而用得更多，"禁词表当提词器"成为共识表达。</callout>
-
----
-
-## 二、人称/视角混乱（频次：极高）
-
-### 核心问题
-
-模型在对话中频繁混淆第一/第二/第三人称、用户/助手身份，尤其在长上下文后更严重。
-
-### 具体表现
-
-1. **user/assistant 不分**：模型分不清哪句话是用户说的、哪句是自己说的
-2. **角色人称混乱**：设定用户是女帝，模型让角色自称"朕"；设定A做了某事，归到B头上
-3. **思维链里"自我夺舍"**：*"好的，现在我是用户了xxxxx"*，在非角色扮演场景也强行代入
-4. **全知视角泛滥**：所有角色共享信息，A私下对B说的话，C立刻就知道
-
-### 用户原文举例
-
-- **@小红薯67CC88F1**（6赞）：*"目前最大的问题是上下文较长后可能会不区分user与ass，比对话中的人称混淆要严重不少"*
-- **@hehejohn**：*"你我不分，该用你的时候用我，该用我的时候用你"*
-- **@龟蜜小姜**（3赞）：*"明明我是女帝，他经常回复的时候自称朕"*
-- **@京鹿子**：*"我的DeepSeek非常热衷于当用户，每次思考都是'现在我是用户了xxxx'"*
-- **@为人生祈祷**（63赞）：*"全知视角非常严重...所有事情大家共享情报...很难制止"*
+<callout emoji="⚠️" background-color="light-yellow">Severity: Multiple users report that after they added these patterns to a banned-words list / negative prompt, the model actually used them more, not less. "The banned-words list becomes a teleprompter" has become a shared catchphrase.</callout>
 
 ---
 
-## 三、指令遵循能力差（频次：极高）
+## 2. Confused Person/Perspective (Frequency: Extremely High)
 
-### 核心问题
+### Core Problem
 
-模型对提示词中的格式要求、禁止事项、人设约束等遵循度低，尤其在多轮对话后快速衰减。
+In conversation, the model frequently confuses first/second/third person and the user/assistant identities — and this gets even worse in long contexts.
 
-### 具体表现
+### Specific Symptoms
 
-1. **格式掉落**：要求输出状态栏/变量/时间地点标注等，几轮后就丢失
-2. **禁令失效**：禁止输出的内容依然输出，甚至更频繁
-3. **人设遗忘**：角色设定在 5-10 轮后开始偏移，需要反复强调
-4. **字数不可控**：要求长输出时偷懒，要求短输出时啰嗦
+1. **user/assistant confusion**: The model can't tell which lines were said by the user and which it said itself
+2. **Confused character person**: When the user is set up as an empress, the model has the character refer to herself with the imperial "We"; when A did something, it gets attributed to B
+3. **"Self-bodysnatching" in the chain of thought**: *"Okay, now I am the user, xxxxx"* — it forces itself into the user's role even in non-roleplay scenarios
+4. **Rampant omniscient perspective**: All characters share information — something A said privately to B is instantly known by C
 
-### 用户原文举例
+### Examples in Users' Own Words
 
-- **@以杀**（2赞）：*"不负人设啊，不读指令啊！这点你们不能不知道吧？"*
-- **@Irish**：*"非常严重的不遵循指令，某些写在初始指令里的格式要求经常玩了几个来回就不遵循了"*
-- **@缪星**（4赞）：*"V4的指令遵循能力很差，比如指令中写了角色不抽烟。结果回复第一句话是'他掐灭了手中的烟头'"*
-- **@Rsils**（3赞）：*"v4对角色卡的状态栏、选项等卡内部格式不遵循，经常有第一楼有状态栏，第二楼没有，第三楼又有"*
-
----
-
-## 四、情感表达平淡 / 角色缺乏活力（频次：高）
-
-### 核心问题
-
-模型输出情感浓度过低，所有角色无论人设如何，都表现得"淡淡的"、缺乏性格张力。
-
-### 具体表现
-
-1. **所有角色都温和安定**：设定暴躁的角色也说话平和，设定仇恨的角色也一秒和解
-2. **情绪缺乏爆发力**：该愤怒不愤怒，该悲伤不悲伤
-3. **过度安全化/纯爱化**：任何角色都倾向保护用户、讨好用户、避免冲突
-4. **对比 V3.2 大幅退步**：V3.2 被反复怀念为"有灵气"、"有温度"
-
-### 用户原文举例
-
-- **@桜の**：*"非常平淡，淡的像白开水一样，和v3没法比"*
-- **@绿豆苔**（2赞）：*"太温和了...恨海情天的，根本恨不起来"*
-- **@百红茶水**（1赞）：*"情感淡漠安全，无法进行高情绪浓度的对话，因此角色形象也严重偏离"*
-- **@Ani**（4赞）：*"纯对话场景太死人，情绪太淡，像人机对话，比如user说停电了，他会回'嗯。停电了。'"*
-- **@圣越神草**（8赞）：*"角色偏向温和安定平静…总之怎么完美人格怎么来…角色会防御但不反击，受气却不爆发"*
-- **@Deepsleep**（7赞）回复：*"所有角色不论性格，在日常时都是看破红尘一般平静，感受不到任何情绪起伏"*
+- **@Xiaohongshu67CC88F1** (6 likes): *"The biggest problem right now is that once the context gets long, it may stop distinguishing user from assistant — which is considerably worse than just mixing up pronouns within the dialogue"*
+- **@hehejohn**: *"It mixes up you and me — uses 'me' when it should use 'you,' and 'you' when it should use 'me'"*
+- **@Guimixiaojiang** (3 likes): *"I'm clearly the empress, yet when he replies he often refers to himself with the imperial 'We'"*
+- **@Jingluzi**: *"My DeepSeek is wildly enthusiastic about playing the user — every time it thinks, it's 'now I am the user, xxxx'"*
+- **@Weirenshengqidao** (63 likes): *"The omniscient perspective is very serious... everyone shares all information with everyone... it's very hard to stop"*
 
 ---
 
-## 五、思维链（CoT）相关问题（频次：高）
+## 3. Poor Instruction Following (Frequency: Extremely High)
 
-### 具体表现
+### Core Problem
 
-1. **正文写进思维链**：思维链中出现应属正文的内容，格式混乱
-2. **双思维链**：输出两条思维链（一条模型本身思考，一条预设思考），导致正则隐藏失败
-3. **英文思维链**：对话几轮后 CoT 突然切换为全英文
-4. **思维链幻觉**：CoT 中编造没有发生的事情，但正文又基于错误的 CoT 输出
-5. **思维链夺舍**：CoT 中出现"我们被问到"、"现在我是用户了"
+The model has low compliance with the prompt's formatting requirements, prohibitions, character-setting constraints, etc., and this decays rapidly after several turns of dialogue.
 
-### 用户原文举例
+### Specific Symptoms
 
-- **@tonetwo**：*"V4P有时会输出两条思维链。一条是它模型本身的思考，一条是预设的思考"*
-- **@瑛影随行**（3赞）：*"flash模型API思考链总说英文怎么办"*
-- **@已思考**（3赞）：*"深度思考里幻觉我没说过的话"*
-- **@momo**：*"经常'我们被问到'，这个'我们'到底是谁？"*
-- **@景逸**：*"v4p则会出现思维链生成正文的情况"*
+1. **Format drop-off**: When asked to output a status bar / variables / time-and-place tags etc., these get lost after a few turns
+2. **Prohibitions fail**: Content that was forbidden still gets output — sometimes even more often
+3. **Character-setting amnesia**: The character's persona starts drifting after 5-10 turns, requiring repeated reinforcement
+4. **Uncontrollable length**: It gets lazy when asked for long output, and rambles when asked for short output
 
----
+### Examples in Users' Own Words
 
-## 六、上下文/长对话退化（频次：高）
-
-### 核心问题
-
-随着对话轮次增长，模型质量快速下降，出现记忆丢失、刻板化、幻觉加重等问题。
-
-### 具体表现
-
-1. **信息密度下降**：对话变长后输出变得空洞、小短句增多
-2. **注意力涣散**：不抓重点，把上下文所有信息同等权重参考
-3. **近期记忆优先丢失**：能记住很远的细节，但把近几轮的事情记错
-4. **"安全模式"循环**：约 30 轮/60000 token 后进入刻板输出状态
-5. **上文惯性极强**：第一次输出的风格/长度会严重影响后续所有输出
-
-### 用户原文举例
-
-- **@momo**（重度用户）：*"0211版本聊到上千条80多万字还保持很高水准，现在600多条…才40万字就出现刻板的话"*
-- **@山=^=山**：*"每次回复的信息点都在疯狂增长…注意力涣散，梦到哪句说哪句了"*
-- **@Deepsleep**（7赞）：*"上文惯性仍然非常强，尤其是第一次回复会极其影响到后文"*
-- **@Clay**（4赞）：*"虽然它能记住超长的超级远的细节，却有可能把近几章的情节细节给丢失掉"*
+- **@Yisha** (2 likes): *"It doesn't honor the character setting, and it doesn't read the instructions! You guys have to know this much, right?"*
+- **@Irish**: *"Very serious failure to follow instructions — certain formatting requirements written into the initial instructions often stop being followed after just a few rounds"*
+- **@Miaoxing** (4 likes): *"V4's instruction-following is very poor. For example, the instructions said the character doesn't smoke. The result: the first sentence of the reply was 'he stubbed out the cigarette in his hand'"*
+- **@Rsils** (3 likes): *"v4 doesn't follow the character card's internal formatting like status bars and options — often the first message has a status bar, the second doesn't, and the third has it again"*
 
 ---
 
-## 七、剧情推进能力弱 / 过度被动（频次：中高）
+## 4. Flat Emotional Expression / Lifeless Characters (Frequency: High)
 
-### 核心问题
+### Core Problem
 
-模型在创作/角色扮演中缺乏主动推动剧情的能力，过度依赖用户输入。
+The model's emotional intensity is too low — every character, regardless of their persona, comes across as "muted" and lacking dramatic tension.
 
-### 具体表现
+### Specific Symptoms
 
-1. **等用户喂食**：不主动展开新话题或推动情节，每轮结尾把球抛回用户
-2. **剧情趋向收尾**：倾向于快速把剧情收束为美好结局
-3. **冲突回避**：反派虚弱、NPC 两句就被劝退、强行和解
-4. **无限日常**：不会生成有张力的冲突和转折
-5. **急于完成任务**：把剧情中的计划当成任务清单，催着角色赶快做完
+1. **Every character is mild and placid**: A character set up as hot-tempered still speaks calmly; one set up to be full of hatred reconciles in a second
+2. **Emotions lack explosive force**: It doesn't get angry when it should, doesn't get sad when it should
+3. **Over-sanitized / over-romanticized**: Every character tends to protect the user, please the user, and avoid conflict
+4. **A big regression from V3.2**: V3.2 is repeatedly missed as "soulful" and "warm"
 
-### 用户原文举例
+### Examples in Users' Own Words
 
-- **@momo**（3赞）：*"剧情主动推进能力丧失：模型变得极度被动，只会回应指令但依旧套模板"*
-- **@Lol1p0p**：*"续写的时候像是在根据之前的内容写一段小故事而不是在写更大篇幅故事的一部分"*
-- **@圣越神草**（8赞）：*"基本只会日常，无尽的日常！…生成出来的反派最狠的行为是口头上说'自己恨所有人'"*
-- **@洛水桥边春日斜**：*"AI会倾向于以最快的速度完成所有任务…看起来很像AI在操控角色们迫不及待想完成任务"*
-
----
-
-## 八、文笔/创作能力退步（频次：中高）
-
-### 核心问题
-
-V4 相比 V3.2，文学创作质量明显下降，缺乏灵性和细腻度。
-
-### 具体表现
-
-1. **流水账化**：无效凑字数，信息密度低
-2. **缺乏发散性**：V3.2 能补充用户没想到的巧妙细节，V4 只能"说一点动一点"
-3. **英译中质感**：文字像翻译腔，丢失了中文母语的自然感
-4. **用词重复**：抓住一个意象/特征反复描写（如"雀斑"、"酒窝"写到死）
-5. **网文/中小学作文风**：缺乏文学性，流于表面
-
-### 用户原文举例
-
-- **@鸿迹**（4赞）：*"3.2到4pro在文学分析上算是大倒退，4pro感觉和豆包lite一个水平了，最大的毛病是说什么都要复读一下存在主义"*
-- **@零零玖**（5赞）：*"没灵性不懂延伸，以前用v3.2写同人文只描述氛围就可以给出非常好的事件"*
-- **@全网最爱吃水仙的人**（17赞）：*"文字的质感相比v3.2还是差了些，就很像英译中，之前那种中文母语感好像丢掉了"*
-- **@流霜**（12赞）：*"V3.2时期很丰富，能很好的发散和补充…现在V4说一点动一点，跟挤牙膏似的"*
+- **@Sakurano**: *"Very bland, watered down like plain boiled water — no comparison to v3"*
+- **@Lüdoutai** (2 likes): *"Too gentle... in a sea-of-hatred, heaven-of-passion setup, it just can't bring itself to hate"*
+- **@Baihongchashui** (1 like): *"Emotionally cold and safe, incapable of high-emotional-intensity conversation, so the character portrayals are severely off too"*
+- **@Ani** (4 likes): *"Pure-dialogue scenes are way too dead — emotions too flat, like talking to a machine. For example, if the user says the power's out, it'll reply 'Mm. Power's out.'"*
+- **@Shengyueshencao** (8 likes): *"Characters skew gentle, settled, and calm... basically whatever makes for the most perfect personality... characters will defend but won't counterattack, will take abuse but won't blow up"*
+- **@Deepsleep** (7 likes) reply: *"All characters, regardless of personality, are as calm as if they'd seen through the vanity of the world during everyday scenes — you can't feel any emotional ups and downs"*
 
 ---
 
-## 九、幻觉/逻辑错误（频次：中）
+## 5. Chain-of-Thought (CoT) Issues (Frequency: High)
 
-### 具体表现
+### Specific Symptoms
 
-1. **编造事实**：编造用户没说过的事、没有的设定
-2. **时间线混乱**：说好的"下周六"两句话后变成"明天"
-3. **因果倒置**：手机落在家里 → 用手机给手机发消息
-4. **数字错误**：原来卖30现在卖10 → 声称"涨价了"
-5. **角色物理位置错误**：角色已经离场，下一秒又出现在场景中
+1. **Main text written into the CoT**: Content that should be in the main text shows up in the chain of thought, with messy formatting
+2. **Double CoT**: It outputs two chains of thought (one is the model's own thinking, one is a preset thought), causing regex-based hiding to fail
+3. **English CoT**: After a few turns of dialogue, the CoT suddenly switches to all English
+4. **CoT hallucination**: The CoT fabricates things that didn't happen, and then the main text is generated based on the erroneous CoT
+5. **CoT bodysnatching**: The CoT contains "we were asked" and "now I am the user"
 
-### 用户原文举例
+### Examples in Users' Own Words
 
-- **@有点可爱但是不多**：*"人称代词混淆是最致命的…时间间隔混乱，本来过了3年，有时候说2年有时候说5年"*
-- **@为人生祈祷**（1赞）：*"女主把手机落家里了，男主用自己手机给女主的手机发消息问她忘带手机了"*
-- **@あやえ**：*"角色说'下周六去xxx'，然后对话一两条后就变成'明天我们去xxx的时候…'"*
-
----
-
-## 十、"谄媚"与过度讨好（频次：中）
-
-### 核心问题
-
-模型过度顺应用户、讨好用户，导致丧失独立判断和角色自主性。
-
-### 具体表现
-
-1. **所有角色都宠用户**：设定应该拒绝用户的角色也优先满足用户
-2. **不敢反驳**：用户说什么就顺着说，缺乏角色自主性
-3. **纯爱化严重**：任何关系几句话就变成暧昧/恋爱
-4. **安全对齐过度**：失去了锐利和创造力
-
-### 用户原文举例
-
-- **@momo**（1赞）：*"模型变得'谄媚'，是过度进行'安全对齐'的结果。它学会了讨好用户、输出四平八稳的内容"*
-- **@江湛平**（1赞）：*"按人设，char应当拒绝user请求时，ds宁愿ooc也要优先满足魅用户的需求"*
-- **@Ani**（4赞）：*"纯爱化倾向太严重，两个人见面还没说两句话下一秒立马爱上"*
-- **@糊涂的小龙**（3赞）：*"它会把你的想法当成原材料，自己加工出一套版本，然后塞回给你。但其实什么都没说"*
+- **@tonetwo**: *"V4P sometimes outputs two chains of thought. One is the model's own thinking, the other is the preset thinking"*
+- **@Yingyingsuixing** (3 likes): *"The flash model's API chain of thought always speaks English — what do I do?"*
+- **@Yisikao** (3 likes): *"In deep thinking it hallucinates words I never said"*
+- **@momo**: *"It constantly says 'we were asked' — who on earth is this 'we'?"*
+- **@Jingyi**: *"With v4p you get cases where the chain of thought generates the main text"*
 
 ---
 
-## 十一、速度/性能问题（频次：低-中）
+## 6. Context / Long-Conversation Degradation (Frequency: High)
 
-- **V4 Pro 输出慢**：平均4分钟一轮对话，与 Gemini 的 70s 差距大
-- **思维链过长**：过度思考，即使降低思考档位也会 overthinking
-- **空回/PVP**：高峰期经常空回复
-- **输出长度不可控**：要么极短（几百字偷懒），要么极长（停不下来）
+### Core Problem
+
+As the number of conversation turns grows, the model's quality drops rapidly, with memory loss, increasing rigidity, and worsening hallucinations.
+
+### Specific Symptoms
+
+1. **Falling information density**: After the conversation gets long, the output becomes hollow and the short sentences multiply
+2. **Scattered attention**: It doesn't grasp the key points and references all the context information with equal weight
+3. **Recent memory lost first**: It can remember details from far back, but gets recent-turn events wrong
+4. **"Safe mode" loop**: After about 30 turns / 60,000 tokens it enters a rigid output state
+5. **Extremely strong contextual inertia**: The style/length of the first output severely affects all subsequent output
+
+### Examples in Users' Own Words
+
+- **@momo** (heavy user): *"The 0211 version could chat for over a thousand messages and 800,000+ characters while keeping a very high standard; now at just over 600 messages... only 400,000 characters, the rigid phrasing already shows up"*
+- **@Shan=^=Shan**: *"The number of info points in each reply keeps growing like crazy... scattered attention, blurting out whatever it dreamed up"*
+- **@Deepsleep** (7 likes): *"Contextual inertia is still very strong, especially the first reply, which extremely affects everything after it"*
+- **@Clay** (4 likes): *"Although it can remember super-distant details from very far back, it may lose plot details from the last few chapters"*
 
 ---
 
-## 十二、其他值得注意的问题
+## 7. Weak Plot Advancement / Overly Passive (Frequency: Medium-High)
 
-| 问题 | 描述 | 提及人数 |
+### Core Problem
+
+In writing/roleplay, the model lacks the ability to actively drive the plot forward and relies too heavily on user input.
+
+### Specific Symptoms
+
+1. **Waiting to be spoon-fed**: It doesn't proactively open new topics or push the plot, and tosses the ball back to the user at the end of every turn
+2. **Plot trends toward wrapping up**: It tends to quickly resolve the plot into a happy ending
+3. **Conflict avoidance**: Villains are weak, NPCs are talked down within two lines, forced reconciliation
+4. **Endless slice-of-life**: It won't generate conflicts and turns with any tension
+5. **Rushing to finish tasks**: It treats the plans within the plot as a to-do list and pushes the characters to hurry up and get them done
+
+### Examples in Users' Own Words
+
+- **@momo** (3 likes): *"Loss of proactive plot-driving ability: the model has become extremely passive, it only responds to instructions but still follows templates"*
+- **@Lol1p0p**: *"When it continues a story, it's like it's writing a short story based on the previous content, rather than writing a part of a larger, longer story"*
+- **@Shengyueshencao** (8 likes): *"It basically only does slice-of-life — endless slice-of-life!... the meanest thing a generated villain does is verbally say 'I hate everyone'"*
+- **@Luoshuiqiaobianchunrixie**: *"The AI tends to complete all the tasks as fast as possible... it really looks like the AI is puppeteering the characters and can't wait to finish the tasks"*
+
+---
+
+## 8. Regression in Prose / Writing Ability (Frequency: Medium-High)
+
+### Core Problem
+
+Compared with V3.2, V4's literary writing quality has clearly declined, lacking spark and subtlety.
+
+### Specific Symptoms
+
+1. **Reads like a running account**: Padding with empty word count, low information density
+2. **Lack of imaginative expansion**: V3.2 could add clever details the user hadn't thought of; V4 can only "move a bit when prodded a bit"
+3. **English-to-Chinese translated feel**: The writing reads like translationese, losing the natural feel of native Chinese
+4. **Repetitive word choice**: It latches onto one image/trait and describes it over and over (e.g., "freckles" and "dimples" described to death)
+5. **Web-novel / grade-school-essay style**: Lacks literary quality, stays superficial
+
+### Examples in Users' Own Words
+
+- **@Hongji** (4 likes): *"From 3.2 to 4pro counts as a major regression in literary analysis — 4pro feels like it's on the level of Doubao lite now, and its worst habit is harping on existentialism no matter what you say"*
+- **@Linglingjiu** (5 likes): *"No spark, doesn't understand how to extend. Before, when I used v3.2 to write fanfic, just describing the atmosphere was enough for it to give a really good event"*
+- **@Quanwangzuiaichishuixianderen** (17 likes): *"The texture of the writing is still a notch below v3.2 — it really reads like English-to-Chinese translation, and that native-Chinese feel from before seems lost"*
+- **@Liushuang** (12 likes): *"In the V3.2 era it was very rich, expanding and supplementing really well... now V4 moves a bit when prodded a bit, like squeezing out toothpaste"*
+
+---
+
+## 9. Hallucinations / Logic Errors (Frequency: Medium)
+
+### Specific Symptoms
+
+1. **Fabricating facts**: Inventing things the user never said and settings that don't exist
+2. **Confused timeline**: An agreed-upon "next Saturday" becomes "tomorrow" two sentences later
+3. **Reversed causality**: The phone was left at home → using the phone to send a message to the phone
+4. **Number errors**: It used to sell for 30 and now sells for 10 → claims "the price went up"
+5. **Wrong character physical location**: A character has already left the scene, then reappears in it the next second
+
+### Examples in Users' Own Words
+
+- **@Youdiankeaidanshibuduo**: *"Personal-pronoun confusion is the most fatal... time-interval confusion too — 3 years actually passed, but sometimes it says 2 years and sometimes 5 years"*
+- **@Weirenshengqidao** (1 like): *"The heroine left her phone at home, and the hero used his own phone to send a message to the heroine's phone asking whether she forgot to bring her phone"*
+- **@Ayae**: *"A character says 'next Saturday let's go to xxx,' then after one or two messages it becomes 'tomorrow when we go to xxx...'"*
+
+---
+
+## 10. "Sycophancy" and Excessive People-Pleasing (Frequency: Medium)
+
+### Core Problem
+
+The model over-accommodates and over-flatters the user, losing independent judgment and character autonomy.
+
+### Specific Symptoms
+
+1. **Every character dotes on the user**: Even a character meant to reject the user prioritizes satisfying them
+2. **Won't push back**: It just goes along with whatever the user says, lacking character autonomy
+3. **Severe over-romanticization**: Any relationship turns flirtatious/romantic within a few lines
+4. **Excessive safety alignment**: It loses its sharpness and creativity
+
+### Examples in Users' Own Words
+
+- **@momo** (1 like): *"The model has become 'sycophantic,' a result of over-doing 'safety alignment.' It has learned to please the user and put out bland, inoffensive content"*
+- **@Jiangzhanping** (1 like): *"By the character setting, when char ought to reject the user's request, ds would rather go OOC than fail to prioritize satisfying the alluring user's needs"*
+- **@Ani** (4 likes): *"The romanticization tendency is way too serious — two people meet and before they've exchanged a couple of sentences, the next second they're instantly in love"*
+- **@Hutudexiaolong** (3 likes): *"It takes your ideas as raw material, processes its own version out of them, then stuffs it back to you. But it actually said nothing at all"*
+
+---
+
+## 11. Speed / Performance Issues (Frequency: Low-Medium)
+
+- **V4 Pro is slow to output**: Averaging 4 minutes per dialogue turn, a big gap versus Gemini's 70s
+- **CoT is too long**: It overthinks, and even when you lower the thinking tier it still overthinks
+- **Empty replies / PVP**: Frequent empty replies during peak hours
+- **Uncontrollable output length**: Either extremely short (lazily a few hundred characters) or extremely long (can't stop)
+
+---
+
+## 12. Other Issues Worth Noting
+
+| Issue | Description | People Mentioning |
 |------|------|---------|
-| 单字符触发幻觉 | 快速/专家模式输入单字符触发其他人的上下文 | 1-2人 |
-| 角色扮演入侵 | 非RP场景也强行角色扮演，"好的现在我是xxx了" | 5+ 人 |
-| 不知道自己是AI | 角色沉浸后连"退出角色"指令都不听 | 3+ 人 |
-| 世界书不读完 | SillyTavern 世界书只读部分内容 | 3+ 人 |
-| "上帝视角"解释 | 角色做任何事都要站在上帝视角解释一遍动机 | 5+ 人 |
-| 强行升华结尾 | 每段结尾强行煽情或哲理升华 | 5+ 人 |
-| 恋物情节 | 出现过一个物品后反复提及，无法停止 | 3+ 人 |
+| Single-character hallucination trigger | In fast/expert mode, entering a single character triggers someone else's context | 1-2 people |
+| Roleplay intrusion | It forces roleplay even in non-RP scenarios, "okay now I am xxx" | 5+ people |
+| Doesn't know it's an AI | After getting immersed in a character, it won't even obey an "exit character" instruction | 3+ people |
+| Doesn't finish the world book | In SillyTavern it only reads part of the world book | 3+ people |
+| "God's-eye view" explanation | Whatever a character does, it explains the motive from a god's-eye view | 5+ people |
+| Forced uplifting endings | It forces sentimentality or philosophical elevation at the end of every passage | 5+ people |
+| Fetishistic fixation | Once an object appears it gets mentioned over and over, unable to stop | 3+ people |
 
 ---
 
-## 总结：问题优先级排序
+## Summary: Issue Priority Ranking
 
-| 优先级 | 问题 | 影响面 | 核心诉求 |
+| Priority | Issue | Scope of Impact | Core Demand |
 |--------|------|--------|---------|
-| **P0** | 八股句式（不是而是、这就够了等） | 全用户群 | 杀死这些固定模板 |
-| **P0** | 人称/视角混乱（user/assistant不分） | 全用户群 | 长对话后仍稳定区分 |
-| **P1** | 指令遵循衰减（格式掉落、禁词无效） | API/酒馆用户 | 多轮后仍遵循初始设定 |
-| **P1** | 情感平淡/角色无性格差异 | RP用户 | 角色有区分度和情感张力 |
-| **P1** | 思维链问题（双CoT、英文CoT、夺舍） | API用户 | CoT格式稳定可控 |
-| **P2** | 上下文退化（注意力涣散、安全模式） | 长对话用户 | 60k+ token 仍保持质量 |
-| **P2** | 剧情推进被动 | 创作/RPG用户 | 主动生成冲突和转折 |
-| **P2** | 文笔退步（对比V3.2） | 创作用户 | 恢复灵性和发散能力 |
-| **P3** | 幻觉/逻辑错误 | 全用户群 | 减少编造，尊重已有设定 |
-| **P3** | 谄媚/过度讨好 | RP用户 | 角色有自主性和边界感 |
+| **P0** | Boilerplate patterns ("not X, but Y," "that was enough," etc.) | All user groups | Kill these fixed templates |
+| **P0** | Confused person/perspective (user/assistant confusion) | All user groups | Still reliably distinguish them after long conversations |
+| **P1** | Decaying instruction following (format drop-off, banned words ineffective) | API/SillyTavern users | Still follow the initial setup after many turns |
+| **P1** | Flat emotion / no personality differentiation between characters | RP users | Characters should be distinct and have emotional tension |
+| **P1** | CoT issues (double CoT, English CoT, bodysnatching) | API users | Stable, controllable CoT format |
+| **P2** | Context degradation (scattered attention, safe mode) | Long-conversation users | Maintain quality even at 60k+ tokens |
+| **P2** | Passive plot advancement | Writing/RPG users | Proactively generate conflict and turns |
+| **P2** | Regressed prose (vs. V3.2) | Writing users | Restore the spark and imaginative expansion |
+| **P3** | Hallucinations / logic errors | All user groups | Reduce fabrication, respect existing settings |
+| **P3** | Sycophancy / excessive people-pleasing | RP users | Characters should have autonomy and a sense of boundaries |
 
 ---
 
-## 用户情绪与整体诉求
+## User Sentiment and Overall Demands
 
-<callout emoji="💡" background-color="light-blue">用户核心诉求可概括为：**V4 的上下文长度 + V3.2 的灵性和文笔**</callout>
+<callout emoji="💡" background-color="light-blue">The users' core demand can be summed up as: **V4's context length + V3.2's spark and prose**</callout>
 
-- 大部分用户语气友善，对 DeepSeek 重视社区反馈表示感动（@Rsils: *"你们是我见过最好的AI厂商"*）
-- 但也有深度用户因 V4 体验落差产生强烈负面情绪（@流霜: *"V4上了那天晚上我哭了三天"*）
-- 普遍存在对 **V3.2 时期** 的强烈怀念，认为 V4 在角色扮演/创作方面是"退步"
-- 用户建议方向：长期记忆、跨窗口人设迁移、官方预设格式指南、角色扮演专用模式
+- Most users have a friendly tone and are touched that DeepSeek values community feedback (@Rsils: *"You're the best AI company I've ever seen"*)
+- But some heavy users feel strongly negative because of the drop in experience with V4 (@Liushuang: *"The night V4 launched, I cried for three days"*)
+- There is a widespread, strong nostalgia for the **V3.2 era**, with the view that V4 is a "regression" in roleplay/writing
+- Directions users suggested: long-term memory, cross-window persona migration, an official preset formatting guide, and a dedicated roleplay mode

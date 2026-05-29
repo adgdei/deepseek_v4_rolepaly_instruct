@@ -1,58 +1,58 @@
-# 🎉 角色扮演反馈帖抽奖记录（2026.05.26）
+# 🎉 Roleplay Feedback Post Lottery Record (2026.05.26)
 
-## 活动背景
+## Background
 
-小红书「DeepSeek-V4角色扮演反馈调研贴」（note_id: `6a0ac4ce000000003601e8f6`）评论区收集用户反馈，承诺从提供有效反馈的用户中抽取一位幸运观众赠送小鲸鱼贴纸。
+The comment section of the Xiaohongshu "DeepSeek-V4 Roleplay Feedback Survey Post" (note_id: `6a0ac4ce000000003601e8f6`) collected user feedback, with a promise to draw one lucky participant from the users who provided valid feedback and gift them a little-whale sticker.
 
 ---
 
-## 抽奖规则
+## Lottery Rules
 
-### 参与资格
+### Eligibility
 
-- 来源：帖子评论区所有评论者（含子回复）
-- 有效评论：内容长度 ≥ 5 字符（排除纯表情/无效内容）
-- 用户唯一性：以小红书 `user_id` 区分（同昵称如"momo"为小红书默认昵称，实际是不同用户，按 user_id 独立计算）
-- 排除：帖主「陈小礼」本人（user_id: `639931c70000000026007c49`）
+- Source: all commenters in the post's comment section (including sub-replies)
+- Valid comment: content length ≥ 5 characters (pure emoji / invalid content excluded)
+- User uniqueness: distinguished by Xiaohongshu `user_id` (identical nicknames such as "momo" are Xiaohongshu's default nickname and actually belong to different users; counted independently by user_id)
+- Excluded: the post author "Chenxiaoli" himself (user_id: `639931c70000000026007c49`)
 
-### 权重计算公式
+### Weight Formula
 
 ```
-权重 = sqrt(总评论字数) × log₂(评论条数 + 1)
+weight = sqrt(total comment characters) × log₂(number of comments + 1)
 ```
 
-**设计理由**：
+**Design rationale**:
 
-| 因子 | 处理方式 | 原因 |
+| Factor | Method | Reason |
 |------|---------|------|
-| 总评论字数 | 取平方根 `sqrt()` | 鼓励详细反馈，但避免超长评论获得过大优势 |
-| 评论条数 | 取对数 `log₂(n+1)` | 鼓励多次反馈，但避免刷量碾压 |
-| 两者相乘 | 乘法组合 | 同时考虑质量（长度）和参与度（次数） |
+| Total comment characters | Square root `sqrt()` | Encourages detailed feedback while preventing overly long comments from gaining an excessive advantage |
+| Number of comments | Logarithm `log₂(n+1)` | Encourages repeated feedback while preventing volume-spamming from dominating |
+| Multiplying the two | Multiplicative combination | Considers both quality (length) and engagement (frequency) |
 
-这样设计使得：
-- 写 1 条 500 字评论的用户 → 权重 ≈ 22.4
-- 写 5 条共 1000 字评论的用户 → 权重 ≈ 82.0
-- 写 50 条共 5000 字评论的用户 → 权重 ≈ 395.4
+This design ensures that:
+- A user who writes 1 comment of 500 characters → weight ≈ 22.4
+- A user who writes 5 comments totaling 1000 characters → weight ≈ 82.0
+- A user who writes 50 comments totaling 5000 characters → weight ≈ 395.4
 
-既奖励深度参与者，又不让单一大户垄断中奖机会。
+This rewards deeply engaged participants without letting a single heavy contributor monopolize the chance of winning.
 
 ---
 
-## 抽奖参数
+## Lottery Parameters
 
-| 参数 | 值 |
+| Parameter | Value |
 |------|-----|
-| 抽奖时间 | 2026-05-26 19:44:20 |
-| 参与用户数 | 513 人 |
-| 有效评论总数 | 1,219 条 |
-| 随机种子字符串 | `deepseek_roleplay_lottery_2026-05-26 19:44:20_xhs_6a0ac4ce000000003601e8f6` |
-| SHA-256 哈希 | `4ae9fb84ae161aa2ff83ccb784f424783175739ae35d00e6c334c996380fd385` |
-| 种子数值（取前16位hex） | `5398122175655189154` |
-| 随机库 | Python `random.choices()` with seed |
+| Draw time | 2026-05-26 19:44:20 |
+| Number of participating users | 513 |
+| Total valid comments | 1,219 |
+| Random seed string | `deepseek_roleplay_lottery_2026-05-26 19:44:20_xhs_6a0ac4ce000000003601e8f6` |
+| SHA-256 hash | `4ae9fb84ae161aa2ff83ccb784f424783175739ae35d00e6c334c996380fd385` |
+| Seed value (first 16 hex digits) | `5398122175655189154` |
+| Random library | Python `random.choices()` with seed |
 
-### 可复现性
+### Reproducibility
 
-任何人可通过以下代码验证抽奖结果：
+Anyone can verify the lottery result with the following code:
 ```python
 import random, hashlib, math
 
@@ -60,85 +60,85 @@ seed_str = "deepseek_roleplay_lottery_2026-05-26 19:44:20_xhs_6a0ac4ce0000000036
 seed_hash = hashlib.sha256(seed_str.encode()).hexdigest()
 seed_int = int(seed_hash[:16], 16)
 random.seed(seed_int)
-# 使用相同的用户列表和权重即可复现结果
+# Reproduce the result using the same user list and weights
 ```
 
 ---
 
-## 抽奖结果
+## Lottery Result
 
-### 🏆 中奖用户：星屿间
+### 🏆 Winner: Xingyujian
 
-| 指标 | 数值 |
+| Metric | Value |
 |------|------|
 | user_id | `64a136a8000000001f005dd1` |
-| 评论数 | 6 条 |
-| 总字数 | 558 字 |
-| 权重 | 66.32 |
-| 中奖概率 | 0.519% |
+| Comments | 6 |
+| Total chars | 558 |
+| Weight | 66.32 |
+| Win probability | 0.519% |
 
-### 中奖用户的反馈内容
+### The Winner's Feedback
 
-**评论 1**：
-> 已经设定为带有"漫不经心"性格的角色却会倾向于使用句号结尾的短句和命令性语言，看着不舒服，低宜人性也不能这么套公式吧
+**Comment 1**:
+> A character that has been set up with a "nonchalant" personality nonetheless tends to use short sentences ending in periods and commanding language, which feels off-putting. Low agreeableness shouldn't be reduced to a formula like that.
 
-**评论 2**：
-> 有时候希望角色叛逆一点，"坏"一点，现在写群像时，角色都会慢慢趋近于同一个淡淡的柔和感觉，个性逐渐标签化
+**Comment 2**:
+> Sometimes I wish the characters were a bit more rebellious, a bit "bad." Right now, when writing ensemble casts, the characters all gradually converge toward the same faint, gentle feel, and their personalities get increasingly reduced to labels.
 
-**评论 3**：
-> 分不清什么时候要做重复，什么时候要写出差异化。比如，对于要求的格式性内容应该严格重复，同上一幕的动作应该保持连续，这是正确的；但总是重复某个特定动作/表情
+**Comment 3**:
+> It's hard to tell when something should be repeated and when it should be differentiated. For example, format-required content should be repeated exactly, and an action carried over from the previous scene should stay continuous — that's correct; but it keeps repeating some specific action/expression.
 
-**评论 4**：
-> 还有，给DeepSeek删除文字的权限吧，每次都搁那不是而是/自我纠正，看着好累
+**Comment 4**:
+> Also, please give DeepSeek the permission to delete text. Every time it does that "not... but rather..." / self-correction thing, it's exhausting to read.
 
-**评论 5**：
-> 另外就是推剧情的问题，一方面不太主动推剧情，没有详略意识；另一方面没有整体意识，想到哪写到哪，会瞎埋伏笔且完全没想过怎么圆，比如莫名其妙放一扇诡异的门。
+**Comment 5**:
+> Another issue is plot progression: on one hand it's not very proactive about moving the plot forward and has no sense of pacing; on the other hand it lacks an overall sense of the story, just writing whatever comes to mind, planting foreshadowing randomly without ever thinking about how to resolve it — for instance, inexplicably placing a creepy door.
 
-该用户反馈了角色个性趋同、重复输出、推剧情被动等多个核心问题，质量高且具体。
+This user reported several core problems — converging character personalities, repetitive output, passive plot progression, and more — with high-quality, specific feedback.
 
 ---
 
-## 权重排名 Top 20
+## Weight Ranking Top 20
 
-> 注：昵称"momo"为小红书默认昵称，实际是不同用户，用 `#user_id后4位` 区分。
+> Note: the nickname "momo" is Xiaohongshu's default nickname and actually belongs to different users, distinguished by `#last 4 of user_id`.
 
-| 排名 | 用户 | 评论数 | 总字数 | 概率 |
+| Rank | User | Comments | Total chars | Probability |
 |:----:|------|:------:|:------:|:----:|
-| 1 | 三生雪 | 47 | 5,591 | 3.271% |
+| 1 | Sanshengxue | 47 | 5,591 | 3.271% |
 | 2 | momo#04fd | 39 | 4,511 | 2.800% |
-| 3 | 杨任.YRWAN | 25 | 4,192 | 2.384% |
+| 3 | Yangren.YRWAN | 25 | 4,192 | 2.384% |
 | 4 | 1900 | 15 | 2,715 | 1.633% |
-| 5 | 事律汝 lvru | 17 | 2,368 | 1.589% |
-| 6 | 为人生祈祷 | 13 | 2,372 | 1.453% |
-| 7 | 深柏 | 14 | 2,150 | 1.419% |
+| 5 | Shilüru lvru | 17 | 2,368 | 1.589% |
+| 6 | Weirenshengqidao | 13 | 2,372 | 1.453% |
+| 7 | Shenbai | 14 | 2,150 | 1.419% |
 | 8 | momo#8793 | 12 | 2,299 | 1.390% |
-| 9 | 白墙 | 20 | 1,467 | 1.318% |
-| 10 | 秋风 | 16 | 1,499 | 1.240% |
-| 11 | 哪来的经屿 | 12 | 1,818 | 1.236% |
-| 12 | 千里镜 | 10 | 1,827 | 1.158% |
-| 13 | 深蓝姬 | 11 | 1,603 | 1.124% |
-| 14 | 榴花照眼 | 8 | 1,976 | 1.104% |
-| 15 | 流霜 | 9 | 1,452 | 0.992% |
-| 16 | 洛水桥边春日斜，碧流清浅见琼砂 | 13 | 1,044 | 0.964% |
+| 9 | Baiqiang | 20 | 1,467 | 1.318% |
+| 10 | Qiufeng | 16 | 1,499 | 1.240% |
+| 11 | Naladejingyu | 12 | 1,818 | 1.236% |
+| 12 | Qianlijing | 10 | 1,827 | 1.158% |
+| 13 | Shenlanji | 11 | 1,603 | 1.124% |
+| 14 | Liuhuazhaoyan | 8 | 1,976 | 1.104% |
+| 15 | Liushuang | 9 | 1,452 | 0.992% |
+| 16 | Luoshuiqiaobianchunrixie, Biliuqingqianjianqiongsha | 13 | 1,044 | 0.964% |
 | 17 | 👀 | 8 | 1,429 | 0.939% |
-| 18 | 胡广生 | 11 | 1,105 | 0.933% |
-| 19 | 戏谑阁下 | 8 | 1,284 | 0.890% |
-| 20 | 神仙太太饭我狂吃 | 8 | 1,030 | 0.797% |
+| 18 | Huguangsheng | 11 | 1,105 | 0.933% |
+| 19 | Xixuegexia | 8 | 1,284 | 0.890% |
+| 20 | Shenxiantaitaifanwokuangchi | 8 | 1,030 | 0.797% |
 
 ---
 
-## 概率分布说明
+## Probability Distribution Notes
 
-- 权重最高的三生雪（3.27%）拥有 47 条评论共 5,591 字，是最活跃的贡献者
-- 中奖者「星屿间」（0.519%）以 6 条共 558 字的高质量反馈中奖
-- 这体现了加权抽奖的公平性：活跃用户概率更高，但所有参与者都有机会
+- The highest-weighted user, Sanshengxue (3.27%), has 47 comments totaling 5,591 characters and is the most active contributor
+- The winner "Xingyujian" (0.519%) won with high-quality feedback of 6 comments totaling 558 characters
+- This demonstrates the fairness of weighted lottery: more active users have higher probability, but all participants have a chance
 
-概率分布特征：
-- Top 1 用户概率 ≈ 3.3%（非垄断）
-- Top 10 用户累计概率 ≈ 20%
-- 其余 503 位用户共享 ≈ 80% 概率
-- 最低概率用户 ≈ 0.02%（1条短评论）
+Probability distribution characteristics:
+- Top 1 user probability ≈ 3.3% (no monopoly)
+- Top 10 users cumulative probability ≈ 20%
+- The remaining 503 users share ≈ 80% probability
+- Lowest-probability user ≈ 0.02% (1 short comment)
 
 ---
 
-*抽奖程序代码见 `scripts/lottery_0526.py`，可重复运行验证结果一致性*
+*The lottery program code is in `scripts/lottery_0526.py`; it can be re-run to verify result consistency*

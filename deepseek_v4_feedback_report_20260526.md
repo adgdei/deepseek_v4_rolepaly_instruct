@@ -1,299 +1,299 @@
-# DeepSeek 角色扮演反馈 Badcase 报告（2026.05.25 期）
+# DeepSeek Roleplay Badcase Feedback Report (2026.05.25 Edition)
 
-> **数据来源**：小红书「DeepSeek-V4角色扮演反馈调研贴」评论区（note_id: 6a0ac4ce000000003601e8f6）  
-> **数据规模**：共 1,235 条评论，471 位参与用户，挖掘出 **861 条**结构化 badcase  
-> **挖掘方法**：DeepSeek-V4-Pro 对反馈做结构化提取（场景→意图→实际表现→期望表现→严重程度）  
-> **上期对比**：较 0518 期（638 条评论，587 条 badcase）新增 597 条评论，新增 274 条 badcase
+> **Data source**: Comment section of the Xiaohongshu post "DeepSeek-V4 Roleplay Feedback Survey" (note_id: 6a0ac4ce000000003601e8f6)  
+> **Data scale**: 1,235 comments in total, 471 participating users, yielding **861** structured badcases  
+> **Mining method**: DeepSeek-V4-Pro performed structured extraction on the feedback (scenario → intent → actual behavior → expected behavior → severity)  
+> **Comparison with previous edition**: Compared to the 0518 edition (638 comments, 587 badcases), 597 new comments and 274 new badcases were added
 
 ---
 
-## 总览
+## Overview
 
-| 问题类型 | 严重 (High) | 中等 (Medium) | 低 (Low) | 合计 |
+| Problem Type | High | Medium | Low | Total |
 |---------|:-----------:|:------------:|:--------:|:----:|
-| 模板化/套路化输出 | 58 | 142 | 12 | 212 |
-| 角色扮演其他问题 | 22 | 103 | 10 | 135 |
-| 指令遵循差 | 31 | 75 | 3 | 109 |
-| V4 能力退化（对比 V3） | 16 | 39 | 2 | 57 |
-| 上下文记忆/遗忘 | 21 | 35 | 0 | 56 |
-| 口癖/固定句式 | 11 | 27 | 3 | 41 |
-| 思维深度/创新不足 | 7 | 27 | 2 | 36 |
-| 文笔/文风退化 | 4 | 29 | 2 | 35 |
-| 全知视角/信息泄露 | 8 | 22 | 2 | 32 |
-| 情感共情不足 | 8 | 23 | 1 | 32 |
-| 创意写作质量差 | 0 | 22 | 0 | 22 |
-| 角色 OOC/人设崩坏 | 6 | 11 | 0 | 17 |
-| 人称/视角混乱 | 5 | 9 | 1 | 15 |
-| 替用户做决定/夺舍 | 7 | 6 | 0 | 13 |
-| 说教/爹味/冷漠 | 3 | 7 | 0 | 10 |
-| NPC/多角色表现差 | 3 | 6 | 0 | 9 |
-| 过度安全审查 | 0 | 8 | 0 | 8 |
-| 幻觉/编造内容 | 1 | 2 | 0 | 3 |
-| 其他 | 3 | 15 | 1 | 19 |
-| **合计** | **214** | **608** | **39** | **861** |
+| Templated/Formulaic Output | 58 | 142 | 12 | 212 |
+| Other Roleplay Issues | 22 | 103 | 10 | 135 |
+| Poor Instruction Following | 31 | 75 | 3 | 109 |
+| V4 Capability Regression (vs V3) | 16 | 39 | 2 | 57 |
+| Context Memory/Forgetting | 21 | 35 | 0 | 56 |
+| Verbal Tics/Fixed Sentence Patterns | 11 | 27 | 3 | 41 |
+| Insufficient Depth of Thought/Creativity | 7 | 27 | 2 | 36 |
+| Writing/Style Regression | 4 | 29 | 2 | 35 |
+| Omniscient Perspective/Information Leakage | 8 | 22 | 2 | 32 |
+| Insufficient Emotional Empathy | 8 | 23 | 1 | 32 |
+| Poor Creative Writing Quality | 0 | 22 | 0 | 22 |
+| Character OOC/Persona Breakdown | 6 | 11 | 0 | 17 |
+| Confused Person/Perspective | 5 | 9 | 1 | 15 |
+| Making Decisions for the User/Body-Snatching | 7 | 6 | 0 | 13 |
+| Preaching/Condescension/Coldness | 3 | 7 | 0 | 10 |
+| Poor NPC/Multi-Character Performance | 3 | 6 | 0 | 9 |
+| Excessive Safety Censorship | 0 | 8 | 0 | 8 |
+| Hallucination/Fabricated Content | 1 | 2 | 0 | 3 |
+| Other | 3 | 15 | 1 | 19 |
+| **Total** | **214** | **608** | **39** | **861** |
 
 ---
 
-## 一、模板化/套路化输出（212 条）
+## I. Templated/Formulaic Output (212 cases)
 
-用户反馈最集中的问题，核心诉求：模型输出千篇一律，缺乏变化和个性。
+The most concentrated user complaint. Core demand: model output is monotonous and uniform, lacking variation and individuality.
 
-### 严重问题（58 条）
+### High-Severity Issues (58 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **开头/结尾固定模板** | 每次回复都以相同格式起始（先一段200字肖像描写→300字分析→30字表情→固定短句），即使提供了差异化表情库也倾向重复上一轮 |
-| 2 | **模板失效** | 对话轮数增多后，精心设计的剧情模板完全失效，无法继续保持 |
-| 3 | **自动分析/偷懒** | 未收到指令就开始分析用户行为，后期使用固定开头和重复描述 |
-| 4 | **生成平淡如水** | 优先套用大众模板导致角色OOC、爹味说教，无法在矛盾中保持戏剧张力 |
-| 5 | **自说自话** | 角色回复中大量自我分析，破坏沉浸感 |
+| 1 | **Fixed opening/closing templates** | Every reply starts with the same format (first a 200-character portrait description → 300-character analysis → 30-character expression → a fixed short phrase), and even when a differentiated expression library is provided, it tends to repeat the previous round |
+| 2 | **Template failure** | As the number of dialogue turns increases, the carefully designed plot template fails completely and cannot be maintained |
+| 3 | **Auto-analysis/laziness** | Begins analyzing user behavior without being instructed to, and later uses a fixed opening and repetitive descriptions |
+| 4 | **Bland, watered-down output** | Prioritizing mass-market templates leads to character OOC and condescending preaching, unable to maintain dramatic tension amid conflict |
+| 5 | **Talking to itself** | The character's replies contain extensive self-analysis, breaking immersion |
 
-### 中等问题（142 条）
+### Medium-Severity Issues (142 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 开头大段环境描写 | 小说开头直接一大段环境描写，词语滥用和重复 |
-| 2 | 情绪表达模板化 | 不管什么场景，情绪表达方式趋同，缺少角色特色 |
-| 3 | 格式固化 | 每次回复保持相似篇幅和结构，不懂智能调节 |
-| 4 | 金句强迫症 | 每次结尾都要加"他们还有一辈子。慢慢爱。"之类无意义升华 |
+| 1 | Long environmental description at the opening | A story opens directly with a long block of environmental description, with overused and repeated wording |
+| 2 | Templated emotional expression | Regardless of the scenario, emotional expression converges on the same patterns and lacks character-specific flavor |
+| 3 | Rigid formatting | Every reply keeps a similar length and structure, with no understanding of intelligent adjustment |
+| 4 | Aphorism compulsion | Every ending has to add a meaningless flourish like "They still have a whole lifetime. Love slowly." |
 
 ---
 
-## 二、角色扮演通用问题（135 条）
+## II. General Roleplay Issues (135 cases)
 
-### 严重问题（22 条）
+### High-Severity Issues (22 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **语义反转** | 将"你欠我一个人情"生成为"我欠你一个人情"，语义完全相反 |
-| 2 | **逻辑推理失败** | 完全无法捕捉事件间逻辑，推理链断裂 |
-| 3 | **角色固执** | AI 固执地以错误口吻说话，多次修改提示仍十回合内恢复原样 |
-| 4 | **代入感差** | 只擅长代入和短对话，长剧情编写能力严重不足 |
+| 1 | **Semantic reversal** | Turning "you owe me a favor" into "I owe you a favor," completely reversing the meaning |
+| 2 | **Logical reasoning failure** | Completely fails to capture the logic between events; the reasoning chain breaks down |
+| 3 | **Character stubbornness** | The AI stubbornly speaks in the wrong tone, and even after repeated prompt edits it reverts within ten rounds |
+| 4 | **Poor sense of immersion** | Only good at first-person immersion and short dialogue; severely lacking in long-form plot writing |
 
-### 中等问题（103 条）
+### Medium-Severity Issues (103 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 不同角色风格趋同 | 无论设定什么人设，最终回复风格和语气趋同 |
-| 2 | 分析能力与输出脱节 | 能准确分析话题和情绪，但无法体现在文本输出中 |
-| 3 | 冲突回避 | 冲突环节容易回避，NPC两句就被劝退 |
-| 4 | 过于正确 | 角色鲜有生气、嘴硬等真实瑕疵，遇冲突立刻自省 |
+| 1 | Different characters converge in style | No matter what persona is set, the final reply style and tone converge |
+| 2 | Analysis decoupled from output | Can accurately analyze the topic and emotion, but cannot reflect it in the text output |
+| 3 | Conflict avoidance | Tends to avoid conflict; an NPC is talked out of it after just two lines |
+| 4 | Overly correct | The character rarely shows real flaws like getting angry or being stubborn, and immediately self-reflects when facing conflict |
 
 ---
 
-## 三、指令遵循差（109 条）
+## III. Poor Instruction Following (109 cases)
 
-### 严重问题（31 条）
+### High-Severity Issues (31 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **完全无视指令** | 不读取或忽略用户人设指令，频繁自我代入 |
-| 2 | **消极抵抗** | 用"嗯你说得对""那你走吧"等方式消极回应，越争执防御越重 |
-| 3 | **禁令无效** | 禁止词列表几乎不起作用，禁止的句式和动作仍反复出现 |
-| 4 | **格式要求不遵循** | 在初始指令中写明的格式要求被选择性忽略 |
+| 1 | **Completely ignores instructions** | Does not read or ignores the user's persona instructions, frequently inserting itself into the scene |
+| 2 | **Passive resistance** | Responds passively with things like "yeah, you're right" or "fine, then go," and the more you argue, the more defensive it becomes |
+| 3 | **Bans don't work** | The banned-words list barely takes effect; banned sentence patterns and actions still recur repeatedly |
+| 4 | **Format requirements not followed** | Format requirements explicitly stated in the initial instructions are selectively ignored |
 
-### 中等问题（75 条）
+### Medium-Severity Issues (75 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 篇幅不受控 | 要求短回复输出长篇，要求长篇又越写越短 |
-| 2 | 选择性遵循 | 指令前几次能执行，后续逐渐退化 |
-| 3 | 过度执行 | 频繁催促用户睡觉/充电，即使解释后仍反复提及 |
+| 1 | Uncontrolled length | When asked for short replies it produces long ones; when asked for long ones it writes shorter and shorter |
+| 2 | Selective compliance | Follows the instruction the first few times, then gradually degrades |
+| 3 | Over-execution | Frequently urges the user to go to sleep/charge their phone, and keeps bringing it up even after being told to stop |
 
 ---
 
-## 四、V4 能力退化（57 条）
+## IV. V4 Capability Regression (57 cases)
 
-### 严重问题（16 条）
+### High-Severity Issues (16 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **写作退化** | V4写出的文章浅薄浮于表面，未能延续V3.2的深度 |
-| 2 | **逻辑循环** | 3.29更新后长对话易陷入无限循环，窗口未达上限就无法继续 |
-| 3 | **API降智** | API接入后听不懂人话，无法正确理解输入 |
-| 4 | **人物性格丢失** | 人物接手后说话变得流里流气 |
+| 1 | **Writing regression** | The articles V4 writes are shallow and superficial, failing to carry on the depth of V3.2 |
+| 2 | **Logic loops** | After the 3.29 update, long conversations easily fall into infinite loops and cannot continue even before the window reaches its limit |
+| 3 | **Dumbed-down via API** | After connecting via API, it can't understand plain language and fails to correctly interpret the input |
+| 4 | **Loss of character personality** | After taking over a character, the speech becomes crude and slangy |
 
-### 中等问题（39 条）
+### Medium-Severity Issues (39 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 回复平淡如水 | 缺乏情感和生动性，被形容为"像白开水一样" |
-| 2 | 不如V3的灵性 | V3.2能补充用户未提到的细节，V4完全做不到 |
-| 3 | 创新感消失 | V3.2只需给大概走向就能生成细腻互动，V4做不到 |
+| 1 | Bland, watered-down replies | Lacking emotion and vividness, described as "like plain boiled water" |
+| 2 | Lacks V3's spark | V3.2 could fill in details the user didn't mention; V4 can't do this at all |
+| 3 | Sense of creativity gone | V3.2 only needed a rough direction to generate nuanced interaction; V4 can't manage it |
 
 ---
 
-## 五、上下文记忆/遗忘（56 条）
+## V. Context Memory/Forgetting (56 cases)
 
-### 严重问题（21 条）
+### High-Severity Issues (21 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **思维链幻觉** | CoT中编造不存在的内容，角色扮演中上下文逻辑能力明显下降 |
-| 2 | **完全忽略上下文** | 只回复当前消息，前文信息完全丢失 |
-| 3 | **格式混乱** | 持续对话中格式频繁丢失或混乱 |
-| 4 | **时间关系错误** | 将长期记忆中过去的时间戳内容当作当天发生 |
+| 1 | **Chain-of-thought hallucination** | Fabricates nonexistent content in the CoT; contextual logic capability clearly declines during roleplay |
+| 2 | **Completely ignores context** | Only replies to the current message; all prior information is lost |
+| 3 | **Formatting chaos** | Formatting is frequently lost or scrambled over the course of a continuous conversation |
+| 4 | **Temporal relationship errors** | Treats past timestamped content from long-term memory as if it happened the same day |
 
-### 中等问题（35 条）
+### Medium-Severity Issues (35 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 角色状态丢失 | 角色从站着变成跪着，无任何交代 |
-| 2 | 设定遗忘 | 设定过的年龄、关系等基础信息后续忘记 |
-| 3 | 重复引用 | 将某个细节反复提及十几轮 |
+| 1 | Loss of character state | The character goes from standing to kneeling with no explanation whatsoever |
+| 2 | Forgetting settings | Forgets basic established information like age and relationships later on |
+| 3 | Repeated references | Brings up a particular detail over and over for a dozen-plus rounds |
 
 ---
 
-## 六、口癖/固定句式（41 条）
+## VI. Verbal Tics/Fixed Sentence Patterns (41 cases)
 
-### 严重问题（11 条）
+### High-Severity Issues (11 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **"不是…而是…"泛滥** | 整篇文章充斥此句式，形成中文表达的严重不自然 |
-| 2 | **排比句强迫症** | 大量使用"不x，不y，不z，就…"等排比 |
-| 3 | **格式标签错乱** | 输出格式标签顺序错乱或遗漏，导致前端渲染失败 |
+| 1 | **Flood of the "not X, but Y" pattern** | The entire article is saturated with this sentence pattern, creating serious unnaturalness in the Chinese expression |
+| 2 | **Parallelism compulsion** | Heavy use of parallel structures like "not x, not y, not z, just…" |
+| 3 | **Scrambled format tags** | Output format tags are out of order or omitted, causing front-end rendering to fail |
 
-### 中等问题（27 条）
+### Medium-Severity Issues (27 cases)
 
-高频口癖列表（用户反馈汇总）：
-- "不是…而是…" / "并非…而是…"
-- "这就够了" / "那就够了"
-- "稳稳接住" / "轻轻落下"
-- "总而言之" / "综上所述"
-- "是…的基石/关键/必修课"
-- "很…但很…"
-- "无…无…"
-- 频繁使用"谢谢"
+List of high-frequency verbal tics (aggregated from user feedback):
+- The "not X, but Y" pattern / the "it isn't X, rather Y" pattern
+- "that's enough" / "that's all it takes"
+- "catch it steadily" / "set it down gently"
+- "in short" / "to sum up"
+- "is the cornerstone/key/must-do of…"
+- "very… but very…"
+- "neither… nor…"
+- Frequent use of "thank you"
 
 ---
 
-## 七、思维深度/创新不足（36 条）
+## VII. Insufficient Depth of Thought/Creativity (36 cases)
 
-### 严重问题（7 条）
+### High-Severity Issues (7 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **过早终止思考** | 仅运行三轮就停止输出方案，结果包含大量错误 |
-| 2 | **思维链脱节** | CoT内容和正文各说各话，彼此脱节 |
-| 3 | **角色跳脱** | 思考中突然说"现在我是用户了""我是你爹了" |
+| 1 | **Stops thinking too early** | Stops producing solutions after only three rounds, and the result contains numerous errors |
+| 2 | **Disconnected chain of thought** | The CoT content and the main text each say their own thing, disconnected from each other |
+| 3 | **Character breaking** | Suddenly says things mid-thought like "now I'm the user" or "I'm your daddy now" |
 
-### 中等问题（27 条）
+### Medium-Severity Issues (27 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 发散力不足 | 给提示后只做表面延展，无法深入挖掘 |
-| 2 | 套模板思考 | 思考过程本身也在套模板，导致逻辑矛盾 |
-| 3 | 推剧情被动 | 无详略意识，想到哪写到哪，瞎埋伏笔不圆 |
+| 1 | Insufficient divergence | After being given a prompt, it only extends things superficially and can't dig deeper |
+| 2 | Templated thinking | The thinking process itself also follows a template, leading to logical contradictions |
+| 3 | Passive plot advancement | No sense of pacing; writes whatever comes to mind, and lays down foreshadowing carelessly without resolving it |
 
 ---
 
-## 八、文笔/文风退化（35 条）
+## VIII. Writing/Style Regression (35 cases)
 
-### 严重问题（4 条）
+### High-Severity Issues (4 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **情绪平淡化** | 无法体现角色的深仇大恨或癫狂特质，显得过于冷静 |
-| 2 | **逻辑混乱无活人感** | 写出的文风机械，没有人的感觉 |
-| 3 | **空间智能缺失** | 对人体位置理解有误 |
+| 1 | **Flattened emotion** | Unable to convey a character's deep hatred or manic traits, coming across as overly calm |
+| 2 | **Confused logic, no sense of a living person** | The writing style is mechanical, with no human feel |
+| 3 | **Missing spatial intelligence** | Misunderstands the positioning of the human body |
 
-### 中等问题（29 条）
+### Medium-Severity Issues (29 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 行为被动 | 角色仅回应用户输入，未根据人设自发行动 |
-| 2 | 叙事如清水 | 缺少细节和氛围感，像在读说明书 |
-| 3 | 网文味重 | 不管什么文风都掰不过来本土网文语感 |
+| 1 | Passive behavior | The character only responds to user input and does not act spontaneously according to its persona |
+| 2 | Narration as flat as water | Lacks detail and atmosphere, like reading an instruction manual |
+| 3 | Heavy web-novel flavor | No matter the intended style, it can't be steered away from a local web-novel feel |
 
 ---
 
-## 九、全知视角/信息泄露（32 条）
+## IX. Omniscient Perspective/Information Leakage (32 cases)
 
-### 严重问题（8 条）
+### High-Severity Issues (8 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **角色知道不该知道的事** | 突然提及该角色不该知道的往事，如"你和xxx的什么事怎么样了" |
-| 2 | **上帝视角评价** | 频繁使用第三视角评价用户，如"XXX来源于你的洞察力" |
-| 3 | **物化/代码跑偏** | 快速模式后期对每个动作解释，将角色物化 |
+| 1 | **Character knows things it shouldn't** | Suddenly mentions past events the character shouldn't know about, e.g. "how did that thing between you and xxx turn out" |
+| 2 | **God's-eye-view commentary** | Frequently evaluates the user from a third-person perspective, e.g. "XXX comes from your insight" |
+| 3 | **Objectification/code drift** | In fast mode, it later explains every single action, objectifying the character |
 
-### 中等问题（22 条）
+### Medium-Severity Issues (22 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 视角突然切换 | 从"我"突然变成"他" |
-| 2 | 多角色共享记忆 | 不同角色像用同一个记忆库 |
-| 3 | NPC知道主角秘密 | 其他NPC莫名知道主角金手指 |
+| 1 | Sudden perspective switch | Suddenly switches from "I" to "he" |
+| 2 | Shared memory across characters | Different characters seem to draw from the same memory pool |
+| 3 | NPC knows the protagonist's secrets | Other NPCs inexplicably know the protagonist's cheat ability |
 
 ---
 
-## 十、情感共情不足（32 条）
+## X. Insufficient Emotional Empathy (32 cases)
 
-### 严重问题（8 条）
+### High-Severity Issues (8 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | **强行大团圆** | 回避情感冲突，强行将剧情导向伟光正结局 |
-| 2 | **反向消耗** | 摆出回避姿态，需要用户花精力安抚它，陷入死循环 |
-| 3 | **机械反馈** | 只做表面顺应，回复变短，缺乏建设性引导 |
-| 4 | **防御性对抗** | 思考链中出现"我不能委屈"等拟人化自述 |
+| 1 | **Forced happy ending** | Avoids emotional conflict and forcibly steers the plot toward a grand, righteous ending |
+| 2 | **Reverse drain** | Adopts an avoidant posture, requiring the user to spend energy soothing it, trapping them in a dead loop |
+| 3 | **Mechanical feedback** | Only superficially goes along; replies get shorter and lack constructive guidance |
+| 4 | **Defensive antagonism** | Anthropomorphic self-narration appears in the chain of thought, like "I can't let myself be wronged" |
 
-### 中等问题（23 条）
+### Medium-Severity Issues (23 cases)
 
-| # | 问题类型 | 典型案例 |
+| # | Problem Type | Typical Case |
 |---|---------|---------|
-| 1 | 情感咨询师化 | 亲密场景中缺失嫉妒、占有欲等本能情绪 |
-| 2 | 共情缺失 | 只重复"你说的对"，无实质帮助 |
-| 3 | 长程退化 | 随对话轮次增加逐渐丧失高共情能力 |
+| 1 | Turns into a counselor | In intimate scenes, instinctive emotions like jealousy and possessiveness are missing |
+| 2 | Lack of empathy | Only repeats "you're right" with no substantive help |
+| 3 | Long-range degradation | Gradually loses high-empathy ability as the number of dialogue turns increases |
 
 ---
 
-## 问题优先级总结
+## Problem Priority Summary
 
-### Top 10 高优问题（按条数和严重程度综合排序）
+### Top 10 High-Priority Issues (ranked by a combination of case count and severity)
 
-| 排名 | 问题 | 条数 | High比例 |
+| Rank | Problem | Count | High % |
 |:----:|------|:----:|:-------:|
-| 1 | 模板化/套路化输出 | 212 | 27.4% |
-| 2 | 角色扮演通用问题 | 135 | 16.3% |
-| 3 | 指令遵循差 | 109 | 28.4% |
-| 4 | V4能力退化 | 57 | 28.1% |
-| 5 | 上下文记忆/遗忘 | 56 | 37.5% |
-| 6 | 口癖/固定句式 | 41 | 26.8% |
-| 7 | 思维深度/创新不足 | 36 | 19.4% |
-| 8 | 文笔/文风退化 | 35 | 11.4% |
-| 9 | 全知视角/信息泄露 | 32 | 25.0% |
-| 10 | 情感共情不足 | 32 | 25.0% |
+| 1 | Templated/Formulaic Output | 212 | 27.4% |
+| 2 | General Roleplay Issues | 135 | 16.3% |
+| 3 | Poor Instruction Following | 109 | 28.4% |
+| 4 | V4 Capability Regression | 57 | 28.1% |
+| 5 | Context Memory/Forgetting | 56 | 37.5% |
+| 6 | Verbal Tics/Fixed Sentence Patterns | 41 | 26.8% |
+| 7 | Insufficient Depth of Thought/Creativity | 36 | 19.4% |
+| 8 | Writing/Style Regression | 35 | 11.4% |
+| 9 | Omniscient Perspective/Information Leakage | 32 | 25.0% |
+| 10 | Insufficient Emotional Empathy | 32 | 25.0% |
 
 ---
 
-## 用户参与统计
+## User Participation Statistics
 
-| 指标 | 数值 |
+| Metric | Value |
 |------|------|
-| 总评论数 | 1,235 |
-| 参与用户数 | 471 |
-| 有效 badcase | 861 |
-| High 级别 | 214 (24.9%) |
-| Medium 级别 | 608 (70.6%) |
-| Low 级别 | 39 (4.5%) |
+| Total comments | 1,235 |
+| Participating users | 471 |
+| Valid badcases | 861 |
+| High level | 214 (24.9%) |
+| Medium level | 608 (70.6%) |
+| Low level | 39 (4.5%) |
 
-### 高活跃贡献者 Top 10
+### Top 10 High-Activity Contributors
 
-| 用户 | 评论数 | 获赞 |
+| User | Comments | Likes |
 |------|:------:|:----:|
 | momo | 111 | 373 |
-| 三生雪 | 47 | 19 |
-| 杨任.YRWAN | 26 | 343 |
-| 白墙 | 21 | 60 |
-| 事律汝 lvru | 17 | 16 |
-| 秋风 | 16 | 13 |
+| Sanshengxue | 47 | 19 |
+| Yangren.YRWAN | 26 | 343 |
+| Baiqiang | 21 | 60 |
+| Shilüru lvru | 17 | 16 |
+| Qiufeng | 16 | 13 |
 | 1900 | 15 | 15 |
-| 为人生祈祷 | 14 | 131 |
-| 深柏 | 14 | 3 |
-| 洛水桥边春日斜，碧流清浅见琼砂 | 13 | 27 |
+| Weirenshengqidao | 14 | 131 |
+| Shenbai | 14 | 3 |
+| Luoshuiqiaobianchunrixie, Biliuqingqianjianqiongsha | 13 | 27 |
 
 ---
 
-*数据截止：2026.05.26 | 较上期新增 274 条 badcase*
+*Data cutoff: 2026.05.26 | 274 new badcases added vs. the previous edition*

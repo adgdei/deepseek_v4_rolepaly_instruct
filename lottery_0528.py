@@ -1,14 +1,14 @@
 """
-角色扮演反馈帖抽奖程序（第二轮：20张贴纸）
-数据来源：小红书帖子 6a0ac4ce000000003601e8f6 评论区
-抽奖时间：2026-05-28
+Role-play feedback thread lottery program (round 2: 20 stickers)
+Data source: comment section of Xiaohongshu post 6a0ac4ce000000003601e8f6
+Lottery time: 2026-05-28
 
-规则：
-- 同第一轮权重公式: sqrt(总字数) × log₂(条数+1)
-- 排除帖主「陈小礼」
-- 排除第一轮中奖者「星屿间」(user_id: 64a136a8000000001f005dd1)
-- 抽取 20 位不重复中奖用户
-- 随机种子：当前时间确定性种子
+Rules:
+- Same weight formula as round 1: sqrt(total characters) x log2(count+1)
+- Exclude the thread owner "Chenxiaoli (pinyin)"
+- Exclude the round-1 winner "Xingyujian" (user_id: 64a136a8000000001f005dd1)
+- Draw 20 distinct winning users
+- Random seed: deterministic seed based on the current time
 """
 
 import json
@@ -28,15 +28,15 @@ DB_CONFIG = {
 
 NOTE_ID = "6a0ac4ce000000003601e8f6"
 EXCLUDE_USER_IDS = {
-    "639931c70000000026007c49",  # 帖主陈小礼
-    "64a136a8000000001f005dd1",  # 第一轮中奖者：星屿间
+    "639931c70000000026007c49",  # thread owner Chenxiaoli (pinyin)
+    "64a136a8000000001f005dd1",  # round-1 winner: Xingyujian
 }
 LOTTERY_TIME = "2026-05-28 15:26:26"
 NUM_WINNERS = 20
 
 
 def extract_comments_from_db():
-    """从数据库提取所有评论（含子评论），保留 user_id"""
+    """Extract all comments (including sub-comments) from the database, keeping user_id"""
     import psycopg2
     conn = psycopg2.connect(**DB_CONFIG)
     cur = conn.cursor()
@@ -83,7 +83,7 @@ def extract_comments_from_db():
 
 
 def aggregate_users(comments):
-    """按 user_id 聚合评论数据，排除帖主和第一轮中奖者"""
+    """Aggregate comment data by user_id, excluding the thread owner and the round-1 winner"""
     user_data = defaultdict(lambda: {"count": 0, "total_length": 0, "comments": [], "nickname": ""})
 
     for c in comments:
@@ -102,7 +102,7 @@ def aggregate_users(comments):
 
 
 def get_display_name(user_data):
-    """生成展示名：同昵称用户用 #后4位 区分"""
+    """Build display names: distinguish users with the same nickname using #last 4 digits"""
     nick_count = defaultdict(int)
     for uid, d in user_data.items():
         nick_count[d["nickname"]] += 1
@@ -118,8 +118,8 @@ def get_display_name(user_data):
 
 def calculate_weights(user_data):
     """
-    计算抽奖权重
-    公式: sqrt(总评论字数) × log₂(评论条数 + 1)
+    Compute the lottery weights
+    Formula: sqrt(total comment characters) x log2(number of comments + 1)
     """
     weights = {}
     for uid, data in user_data.items():
@@ -130,7 +130,7 @@ def calculate_weights(user_data):
 
 
 def generate_seed(lottery_time):
-    """生成确定性随机种子"""
+    """Generate a deterministic random seed"""
     seed_str = f"deepseek_roleplay_lottery_round2_{lottery_time}_xhs_{NOTE_ID}"
     seed_hash = hashlib.sha256(seed_str.encode()).hexdigest()
     seed_int = int(seed_hash[:16], 16)
@@ -138,7 +138,7 @@ def generate_seed(lottery_time):
 
 
 def run_lottery(weights, seed_int, num_winners):
-    """执行加权随机抽奖，抽取 num_winners 位不重复中奖者"""
+    """Run the weighted random draw, selecting num_winners distinct winners (sampling without replacement)"""
     random.seed(seed_int)
     users_list = sorted(weights.keys())
     weights_list = [weights[u] for u in users_list]
@@ -161,42 +161,42 @@ def run_lottery(weights, seed_int, num_winners):
 
 def main():
     print("=" * 60)
-    print("  DeepSeek 角色扮演反馈帖 第二轮抽奖（20张贴纸）")
+    print("  DeepSeek Role-play Feedback Thread Round 2 Lottery (20 stickers)")
     print("=" * 60)
 
-    # Step 1: 数据提取
-    print("\n[1/5] 提取评论数据...")
+    # Step 1: data extraction
+    print("\n[1/5] Extracting comment data...")
     try:
         comments = extract_comments_from_db()
-        print(f"      （来源：数据库直连）")
+        print(f"      (source: direct database connection)")
     except Exception as e:
-        print(f"      数据库连接失败({e})，使用缓存文件...")
+        print(f"      Database connection failed ({e}), using cache file...")
         with open("roleplay_comments_with_uid.json") as f:
             comments = json.load(f)
-        print(f"      （来源：缓存文件）")
-    print(f"      共 {len(comments)} 条评论")
+        print(f"      (source: cache file)")
+    print(f"      {len(comments)} comments total")
 
-    # Step 2: 用户聚合
-    print("\n[2/5] 按 user_id 聚合（排除帖主+第一轮中奖者）...")
+    # Step 2: user aggregation
+    print("\n[2/5] Aggregating by user_id (excluding thread owner + round-1 winner)...")
     user_data = aggregate_users(comments)
     display_names = get_display_name(user_data)
-    print(f"      合格参与者: {len(user_data)} 人")
-    print(f"      有效评论: {sum(u['count'] for u in user_data.values())} 条")
-    print(f"      排除用户: 帖主(陈小礼) + 第一轮中奖者(星屿间)")
+    print(f"      Eligible participants: {len(user_data)}")
+    print(f"      Valid comments: {sum(u['count'] for u in user_data.values())}")
+    print(f"      Excluded users: thread owner (Chenxiaoli) + round-1 winner (Xingyujian)")
 
     nick_counter = Counter(d["nickname"] for d in user_data.values())
     dup_nicks = {k: v for k, v in nick_counter.items() if v > 1}
     if dup_nicks:
-        print(f"      同昵称用户（按 user_id 区分）: {sum(dup_nicks.values())} 人涉及 {len(dup_nicks)} 个昵称")
+        print(f"      Users with duplicate nicknames (distinguished by user_id): {sum(dup_nicks.values())} users across {len(dup_nicks)} nicknames")
 
-    # Step 3: 权重计算
-    print("\n[3/5] 计算权重: sqrt(总字数) × log₂(条数+1)")
+    # Step 3: weight calculation
+    print("\n[3/5] Computing weights: sqrt(total characters) x log2(count+1)")
     weights = calculate_weights(user_data)
     total_weight = sum(weights.values())
 
     sorted_users = sorted(weights.items(), key=lambda x: -x[1])
-    print(f"\n      权重 Top 20:")
-    print(f"      {'排名':<4} {'用户':<28} {'user_id':<28} {'评论数':<6} {'总字数':<7} {'概率'}")
+    print(f"\n      Top 20 by weight:")
+    print(f"      {'Rank':<4} {'User':<28} {'user_id':<28} {'Comments':<6} {'Chars':<7} {'Prob'}")
     print(f"      {'-' * 85}")
     for i, (uid, w) in enumerate(sorted_users[:20], 1):
         d = user_data[uid]
@@ -204,22 +204,22 @@ def main():
         prob = w / total_weight * 100
         print(f"      {i:<4} {name:<28} {uid:<28} {d['count']:<6} {d['total_length']:<7} {prob:.3f}%")
 
-    # Step 4: 生成种子
-    print(f"\n[4/5] 生成随机种子...")
+    # Step 4: generate seed
+    print(f"\n[4/5] Generating random seed...")
     seed_str, seed_hash, seed_int = generate_seed(LOTTERY_TIME)
-    print(f"      抽奖时间: {LOTTERY_TIME}")
-    print(f"      种子字符串: {seed_str}")
+    print(f"      Lottery time: {LOTTERY_TIME}")
+    print(f"      Seed string: {seed_str}")
     print(f"      SHA-256: {seed_hash}")
-    print(f"      种子数值: {seed_int}")
+    print(f"      Seed value: {seed_int}")
 
-    # Step 5: 抽奖
-    print(f"\n[5/5] 执行抽奖（抽取 {NUM_WINNERS} 位）...")
+    # Step 5: draw
+    print(f"\n[5/5] Running the draw (selecting {NUM_WINNERS} winners)...")
     winners = run_lottery(weights, seed_int, NUM_WINNERS)
 
     print(f"\n{'=' * 60}")
-    print(f"  🎉 第二轮中奖名单（共 {len(winners)} 位）")
+    print(f"  🎉 Round 2 winners ({len(winners)} total)")
     print(f"{'=' * 60}")
-    print(f"\n  {'序号':<4} {'用户':<28} {'user_id':<28} {'评论数':<6} {'总字数':<7} {'概率'}")
+    print(f"\n  {'No.':<4} {'User':<28} {'user_id':<28} {'Comments':<6} {'Chars':<7} {'Prob'}")
     print(f"  {'-' * 85}")
 
     for i, uid in enumerate(winners, 1):
@@ -229,13 +229,13 @@ def main():
         print(f"  {i:<4} {name:<28} {uid:<28} {d['count']:<6} {d['total_length']:<7} {prob:.3f}%")
 
     print(f"\n{'=' * 60}")
-    print(f"\n  抽奖参数汇总:")
-    print(f"  - 参与用户: {len(user_data)} 人")
-    print(f"  - 中奖人数: {len(winners)} 人")
-    print(f"  - 随机种子时间: {LOTTERY_TIME}")
-    print(f"  - 种子SHA-256: {seed_hash}")
-    print(f"  - 权重公式: sqrt(总字数) × log₂(条数+1)")
-    print(f"  - 排除: 帖主 + 第一轮中奖者")
+    print(f"\n  Lottery parameter summary:")
+    print(f"  - Participating users: {len(user_data)}")
+    print(f"  - Number of winners: {len(winners)}")
+    print(f"  - Random seed time: {LOTTERY_TIME}")
+    print(f"  - Seed SHA-256: {seed_hash}")
+    print(f"  - Weight formula: sqrt(total characters) x log2(count+1)")
+    print(f"  - Excluded: thread owner + round-1 winner")
     print(f"{'=' * 60}")
 
 
